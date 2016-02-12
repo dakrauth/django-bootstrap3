@@ -1,3 +1,7 @@
+================
+Example Template
+================
+
 .. code:: django
 
   {# Load the tag library #}

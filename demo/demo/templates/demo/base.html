@@ -1,28 +1,47 @@
 {% extends 'demo/bootstrap.html' %}
-
 {% load url from future %}
-
 {% load bootstrap3 %}
-
+{% block bootstrap3_extra_head %}
+    <style>
+        .extra { font-size: 1em; color: #999; text-transform: uppercase;}
+        .list-group-item.active a { color: #fff; }
+    </style>
+{% endblock %}
 {% block bootstrap3_content %}
     <div class="container">
-        <h1>{% block title %}(no title){% endblock %}</h1>
-
-        <p>
-            <a href="{% url 'home' %}">home</a>
-            <a href="{% url 'formset_default' %}">formset</a>
-            <a href="{% url 'form_default' %}">form</a>
-            <a href="{% url 'form_by_field' %}">form_by_field</a>
-            <a href="{% url 'form_horizontal' %}">form_horizontal</a>
-            <a href="{% url 'form_inline' %}">form_inline</a>
-            <a href="{% url 'form_with_files' %}">form_with_files</a>
-            <a href="{% url 'pagination' %}">pagination</a>
-            <a href="{% url 'misc' %}">miscellaneous</a>
-        </p>
-
-        {% bootstrap_messages %}
-
-        {% block content %}(no content){% endblock %}
+        <div class="extra">django-bootstrap3 Examples</div>
+        <div class="page-header"><h1>{% block title %}(no title){% endblock %}</h1></div>
     </div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10" role="main">
+                {% bootstrap_messages %}
+                {% block content %}(no content){% endblock %}
+            </div>
+            <div class="col-md-2 nav-column" role="nav">
+                <div class="panel panel-default">
+                    {% with view.request.path as path %}
+                    <ul class="list-group">
+                        <li class="list-group-item{% if path == '/' %} active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="list-group-item{% if path == '/formset' %} active{% endif %}"><a href="{% url 'formset_default' %}">formset</a></li>
+                        <li class="list-group-item{% if path == '/form' %} active{% endif %}"><a href="{% url 'form_default' %}">form</a></li>
+                        <li class="list-group-item{% if path == '/form_by_field' %} active{% endif %}"><a href="{% url 'form_by_field' %}">form_by_field</a></li>
+                        <li class="list-group-item{% if path == '/form_horizontal' %} active{% endif %}"><a href="{% url 'form_horizontal' %}">form_horizontal</a></li>
+                        <li class="list-group-item{% if path == '/form_inline' %} active{% endif %}"><a href="{% url 'form_inline' %}">form_inline</a></li>
+                        <li class="list-group-item{% if path == '/form_with_files' %} active{% endif %}"><a href="{% url 'form_with_files' %}">form_with_files</a></li>
+                        <li class="list-group-item{% if path == '/pagination' %} active{% endif %}"><a href="{% url 'pagination' %}">pagination</a></li>
+                        <li class="list-group-item{% if path == '/misc' %} active{% endif %}"><a href="{% url 'misc' %}">miscellaneous</a></li>
+                    </ul>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block extra %}
+    <div class="container code">
+        <hr>
+        <h2 class="extra">Code</h2>
+        <pre class="well">{% block code %}{% endblock code %}</pre>
+    </div>
+    {% endblock extra %}
 {% endblock %}

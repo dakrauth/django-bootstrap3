@@ -15,3 +15,9 @@
     </form>
 
 {% endblock %}
+{% block code %}{% verbatim %}{% bootstrap_formset_errors form %}
+&lt;form role="form" method="post"&gt;
+    {% csrf_token %}
+    {% bootstrap_formset form %}
+    {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}
+&lt;/form&gt;{% endverbatim %}{% endblock code %}

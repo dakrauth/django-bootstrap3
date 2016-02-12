@@ -72,9 +72,7 @@ class PaginationView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(PaginationView, self).get_context_data(**kwargs)
-        lines = []
-        for i in range(10000):
-            lines.append('Line %s' % (i + 1))
+        lines = ['Line {}'.format(i + 1) for i in range(10000)]
         paginator = Paginator(lines, 10)
         page = self.request.GET.get('page')
         try:

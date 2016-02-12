@@ -23,3 +23,5 @@
     {% bootstrap_pagination lines url="/pagination?page=1" size="large" %}
 
 {% endblock %}
+{% block code %}{% verbatim %}{% bootstrap_pagination lines url="/pagination?page=1&flop=flip" extra="q=foo" size="small" %}
+{% bootstrap_pagination lines url="/pagination?page=1" size="large" %}{% endverbatim %}{% endblock code %}

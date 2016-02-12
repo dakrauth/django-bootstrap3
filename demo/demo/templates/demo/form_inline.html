@@ -15,3 +15,8 @@
     </form>
 
 {% endblock %}
+{% block code %}{% verbatim %}&lt;form role="form" class="form-inline" method="post"&gt;
+    {% csrf_token %}
+    {% bootstrap_form form layout='inline' %}
+    {% buttons submit='OK' reset='Cancel' layout='inline' %}{% endbuttons %}
+&lt;/form&gt;{% endverbatim %}{% endblock code %}

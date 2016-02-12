@@ -16,6 +16,7 @@ Contents:
    templatetags
    settings
    templates
+   example_template
    contributing
    authors
    history
