@@ -3,6 +3,26 @@
 History
 -------
 
+6.2.2 (2015-08-20)
+++++++++++++++++++
+
+* Bug fix for escaped icons in buttons (reported by @jlec)
+
+
+6.2.1 (2015-08-19)
+++++++++++++++++++
+
+* Bug fix for whitespace in label placeholders (@Grelek)
+
+
+6.2.0 (2015-08-15)
+++++++++++++++++++
+
+* Improved tests
+* Make simple_tag output safe in Django 1.9
+* Better support for MultiWidgets (@xrmx)
+* Better documentation (@Moustacha)
+
 
 6.1.0 (2015-06-25)
 ++++++++++++++++++

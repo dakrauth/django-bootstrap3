@@ -83,6 +83,10 @@ bootstrap_icon
 
 .. autofunction:: bootstrap3.templatetags.bootstrap3.bootstrap_icon
 
+bootstrap_alert
+~~~~~~~~~~~~~~~
+
+.. autofunction:: bootstrap3.templatetags.bootstrap3.bootstrap_alert
 
 buttons
 ~~~~~~~

@@ -7,6 +7,7 @@ from django.forms import (
     PasswordInput
 )
 from django.forms.widgets import CheckboxInput
+from django.utils.safestring import mark_safe
 
 from .bootstrap import (
     get_bootstrap_setting, get_form_renderer, get_field_renderer,
@@ -117,8 +118,10 @@ def render_button(
     if value:
         attrs['value'] = value
     return render_tag(
-        tag, attrs=attrs, content=text_concat(
-            icon_content, content, separator=' '))
+        tag,
+        attrs=attrs,
+        content=mark_safe(text_concat(icon_content, content, separator=' ')),
+    )
 
 
 def render_field_and_label(
@@ -133,7 +136,7 @@ def render_field_and_label(
         if not field_class:
             field_class = get_bootstrap_setting('horizontal_field_class')
         if not label:
-            label = '&#160;'
+            label = mark_safe('&#160;')
         label_class = add_css_class(label_class, 'control-label')
     html = field
     if field_class:
