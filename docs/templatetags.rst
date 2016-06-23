@@ -5,10 +5,11 @@ Template tags and filters
 
 .. note::
 
- For the following examples, it is understood that you have already loaded the ``bootstrap3``
- template tag library, placing the code below in the beginning that each template that ``bootstrap3``
- template tag library will be used. Read the :doc:`installation` and :doc:`quickstart` sections on how
- to accomplish this.
+    For the following examples, it is understood that you have already loaded the
+    ``bootstrap3`` template tag library, placing the code below in the beginning
+    that each template that ``bootstrap3`` template tag library will be used. Read
+    the :doc:`installation` and :doc:`quickstart` sections on how to accomplish
+    this.
 
 Common Keyword Arguments
 ------------------------
@@ -16,9 +17,9 @@ Common Keyword Arguments
 The following table lists the optional keyword arguments common to 
 ``bootstrap_form``, ``bootstrap_formset``, and ``bootstrap_field``.
 
-==========================  ================  =======================================
+==========================  ================  ==================================
 Variable                    Default           Description
-==========================  ================  =======================================
+==========================  ================  ==================================
 ``layout``                  ``''``            
 ``form_group_class``        ``'form-group'``  
 ``field_class``             ``''``            
@@ -28,12 +29,15 @@ Variable                    Default           Description
 ``exclude``                 ``''``            
 ``set_required``            ``True``          
 ``set_disabled``            ``False``         
-``size``                    ``''``            Options: ``'sm'``, ``'small'``, 
-                                              ``'md'``, ``'medium'``, ``'lg'``, 
-                                              or ``'large'``.
+``size``                    ``''``            Options:
+                                              
+                                              * ``'sm'`` / ``'small'``
+                                              * ``'md'`` / ``'medium'``
+                                              * ``'lg'`` / ``'large'``
+                                              
 ``horizontal_label_class``  ``'col-md-3'``    
 ``horizontal_field_class``  ``'col-md-9'``    
-==========================  ================  =======================================
+==========================  ================  ==================================
 
 
 bootstrap_form
